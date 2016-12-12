@@ -18,9 +18,10 @@ public class CartItemServiceImpl implements CartItemService{
 	@Autowired
 	private CartItemDao cartItemDao;
 	
-	public List<CartItem> loatCartItems(String... cartItemIds) {
+	public List<CartItem> loadCartItems(String cartItemIds) {
 		try {
-			return cartItemDao.loadCartItems(cartItemIds);
+			String[] cartItemIdArray = cartItemIds.split(",");
+			return cartItemDao.loadCartItems(cartItemIdArray);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -38,9 +39,10 @@ public class CartItemServiceImpl implements CartItemService{
 		}
 	}
 	
-	public void batchDelete(String... cartItemIds){
+	public void batchDelete(String cartItemIds){
 		try {
-			cartItemDao.bacthDelete(cartItemIds);
+			String[] cartItemIdArray = cartItemIds.split(",");
+			cartItemDao.bacthDelete(cartItemIdArray);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

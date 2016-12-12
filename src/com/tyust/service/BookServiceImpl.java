@@ -128,7 +128,7 @@ public class BookServiceImpl implements BookService{
 	}
 	
 	public void addBook(Book book){
-		try {
+		try { 
 			Map<String,Object> map = toMap(book);
 			bookDao.add(map);
 		} catch (SQLException e) {

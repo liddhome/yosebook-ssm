@@ -24,12 +24,14 @@ public class CartItemController{
 	private CartItemService cartItemService;
 	
 	@RequestMapping("/loadCartItems.do")
-	public String loadCartItems(ModelMap map,String total,String... cartItemIds){
+	public String loadCartItems(HttpServletRequest request,ModelMap map,String total){
+		String cartItemIds = request.getParameter("cartItemIds");
 		double doublTotal = Double.parseDouble(total);
-		List<CartItem> cartItems = cartItemService.loatCartItems(cartItemIds);
+		List<CartItem> cartItems = cartItemService.loadCartItems(cartItemIds);
 		map.addAttribute("cartItems", cartItems);
 		map.addAttribute("total", doublTotal);
 		map.addAttribute("cartItemIds", cartItemIds);
+		
 		return "/jsps/cart/showitem";
 	}
 	
@@ -45,8 +47,8 @@ public class CartItemController{
 	}
 	
 	@RequestMapping("/batchDelete.do")
-	public String batchDelete(ModelMap map,HttpServletRequest request,
-			String... cartItemIds){
+	public String batchDelete(ModelMap map,HttpServletRequest request){
+		String cartItemIds = request.getParameter("cartItemIds");
 		cartItemService.batchDelete(cartItemIds);
 		return myCart(map,request);
 	}

@@ -13,13 +13,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.tyust.dao.BookDao;
 import com.tyust.dao.CartItemDao;
 import com.tyust.dao.CategoryDao;
-import com.tyust.entity.Book;
+import com.tyust.dao.OrderDao;
+import com.tyust.dao.OrderItemDao;
 import com.tyust.entity.CartItem;
 import com.tyust.entity.Category;
-import com.tyust.pager.PageBean;
+import com.tyust.entity.Order;
+import com.tyust.entity.OrderItem;
 import com.tyust.service.BookService;
 import com.tyust.service.CartItemService;
 import com.tyust.service.CategoryService;
+import com.tyust.service.OrderService;
 
 public class TestCase {
 	private ApplicationContext ac;
@@ -29,6 +32,9 @@ public class TestCase {
 	BookDao bookDao;
 	CartItemService cartItemService;
 	CartItemDao cartItemDao;
+	OrderDao orderDao;
+	OrderService orderService;
+	OrderItemDao orderItemDao;
 	@Before
 	public void init(){
 		ac = new ClassPathXmlApplicationContext(
@@ -40,6 +46,9 @@ public class TestCase {
 		bookDao = ac.getBean("bookDao",BookDao.class);
 		cartItemService = ac.getBean("cartItemService",CartItemService.class);
 		cartItemDao = ac.getBean("cartItemDao",CartItemDao.class);
+		orderDao = ac.getBean("orderDao",OrderDao.class);
+		orderService = ac.getBean("orderService",OrderService.class);
+		orderItemDao = ac.getBean("orderItemDao",OrderItemDao.class);
 	}
 
 	@Test
@@ -109,6 +118,14 @@ public class TestCase {
 		//List<CartItem> cartItemList = cartItemService.myCart("531D8A16D524478D86F8A115FE95D93F");
 		List<CartItem> cartItemList = cartItemDao.findByUser("531D8A16D524478D86F8A115FE95D93F");
 		System.out.println(cartItemList);
+	}
+	//FAC08EE0DF2C4487A6FA2B11B343307E
+	@Test
+	public void testOrder() throws SQLException{
+		Order order = orderDao.load("FAC08EE0DF2C4487A6FA2B11B343307E");
+		System.out.println(order.getOrderItemList());
+		/*OrderItem orderItem = orderItemDao.load("06AD3253E7EA415B828D1299462DE812");
+		System.out.println(orderItem);*/
 	}
 
 }

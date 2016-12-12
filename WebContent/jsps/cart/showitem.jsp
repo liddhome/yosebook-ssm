@@ -37,10 +37,9 @@
 </head>
 
 <body>
-    <form id="form1" action="<c:url value='/orderServlet'/>"
+    <form id="form1" action="<c:url value='/order/createOrder.do'/>"
         method="post">
         <input type="hidden" name="cartItemIds" value="${cartItemIds }" />
-        <input type="hidden" name="method" value="createOrder" />
         <table width="95%" align="center" cellpadding="0" cellspacing="0">
             <tr bgcolor="#efeae5">
                 <td width="400px" colspan="5"><span

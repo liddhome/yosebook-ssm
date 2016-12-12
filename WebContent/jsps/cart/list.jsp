@@ -117,7 +117,7 @@
 		$(":checkbox[name=checkboxBtn][checked=true]").each(function(){
 			cartItemIdArray.push($(this).val());
 		});
-		location="/yosebook-ssm/cartItem/batchDelete.do?cartItemIds="+cartItemIdArray;
+		location="/yosebook-ssm/cartItem/batchDelete.do?cartItemIds="+cartItemIdArray.toString();
 	}
 	/*结算方法*/
 	function jiesuan(){

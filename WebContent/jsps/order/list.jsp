@@ -14,7 +14,6 @@
     href="<c:url value='/jsps/css/order/list.css'/>" />
 <link rel="stylesheet" type="text/css"
     href="<c:url value='/jsps/pager/pager.css'/>" />
-<%-- <script type="text/javascript" src="<c:url value='/jsps/pager/pager.js'/>"></script> --%>
 </head>
 
 <body>
@@ -31,7 +30,7 @@
         <c:forEach items="${pb.beanList }" var="order">
             <tr class="tt">
                 <td width="320px" class="brlf">订单号：<a
-                    href="<c:url value='/orderServlet?method=load&oid=${order.oid }'/>">${order.oid }</a></td>
+                    href="<c:url value='/order/load.do?oid=${order.oid }'/>">${order.oid }</a></td>
                 <td width="200px">下单时间：${order.ordertime }</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -41,7 +40,7 @@
             <tr style="padding-top: 10px; padding-bottom: 10px;">
                 <td colspan="2">
                 <c:forEach items="${order.orderItemList }" var="orderItem">
-                    <a class="link2" href="<c:url value='/bookServlet?method=load&bid=${orderItem.book.bid }'/>"> <img
+                    <a class="link2" href="<c:url value='/book/load.do?bid=${orderItem.book.bid }'/>"> <img
                         border="0" width="70"
                         src="<c:url value='/${orderItem.book.image_b }'/>" /></a>
                 </c:forEach>
@@ -57,13 +56,13 @@
                     <c:when test="${order.status eq 5 }">(已取消)</c:when>
                 </c:choose>
                 </td>
-                <td><a href="<c:url value='/orderServlet?method=load&oid=${order.oid }'/>">查看</a><br />
+                <td><a href="<c:url value='/order/load.do?oid=${order.oid }'/>">查看</a><br />
                 <c:if test="${order.status eq 1 }">
-                    <a href="<c:url value='/orderServlet?method=paymentPre&oid=${order.oid }'/>">支付</a><br />
-                    <a href="<c:url value='/orderServlet?method=load&oid=${order.oid }&btn=cancel'/>">取消</a><br />
+                    <a href="<c:url value='/order/paymentPre.do?oid=${order.oid }'/>">支付</a><br />
+                    <a href="<c:url value='/order/load.do?oid=${order.oid }&btn=cancel'/>">取消</a><br />
                 </c:if>
                 <c:if test="${order.status eq 3 }">
-                    <a href="<c:url value='/orderServlet?method=load&oid=${order.oid }&btn=confirm'/>">确认收货</a><br />
+                    <a href="<c:url value='/order/load.do?oid=${order.oid }&btn=confirm'/>">确认收货</a><br />
                 </c:if>
                 </td>
             </tr>
