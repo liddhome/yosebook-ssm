@@ -61,8 +61,8 @@ function loadChildren(){
 	var pid = $("#pid").val();
 	$.ajax({
 		type:"POST",
-		url:"/yosebook-ssm/adminBookServlet",
-		data:{method:"ajaxFindChildren",pid:pid},
+		url:"/yosebook-ssm/admin/book/ajaxFindChildren.do",
+		data:{pid:pid},
 		dataType:"JSON",
 		async:true,
 		cache:false,
@@ -84,12 +84,12 @@ function loadChildren(){
   <body>
   <div>
    <p style="font-weight: 900; color: red;">${msg }</p>
-   <form action="/yosebook-ssm/adminAddBookServlet" enctype="multipart/form-data" method="post" id="form">
+   <form action="/yosebook-ssm/admin/book/addBook.do" enctype="multipart/form-data" method="post" id="form">
     <div>
 	    <ul>
 	    	<li>书名：　<input id="bname" type="text" name="bname" value="" style="width:500px;"/></li>
-	    	<li>大图：　<input id="image_w" type="file" name="image_w"/></li>
-	    	<li>小图：　<input id="image_b" type="file" name="image_b"/></li>
+	    	<li>大图：　<input id="image_w" type="file" name="fileItem"/></li>
+	    	<li>小图：　<input id="image_b" type="file" name="fileItem"/></li>
 	    	<li>当前价：<input id="price" type="text" name="price" value="40.7" style="width:50px;"/></li>
 	    	<li>定价：　<input id="currPrice" type="text" name="currPrice" value="59.0" style="width:50px;"/>
             &nbsp;&nbsp; &nbsp;&nbsp;

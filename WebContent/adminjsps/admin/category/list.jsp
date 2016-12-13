@@ -28,9 +28,9 @@
     		<td width="200px;">${parent.cname }</td>
     		<td class="secondCol">${parent.desc }</td>
     		<td width="200px;">
-    		  <a href="<c:url value='/adminCategoryServlet?method=addChildPre&pid=${parent.cid }'/>">添加二级分类</a>
-    		  <a href="<c:url value='/adminCategoryServlet?method=editParentPre&cid=${parent.cid }'/>">修改</a>
-    		  <a onclick="return confirm('您是否真要删除该一级分类？')" href="<c:url value="/adminCategoryServlet?method=deleteParent&cid=${parent.cid }"/>">删除</a>
+    		  <a href="<c:url value='/admin/category/addChildPre.do?pid=${parent.cid }'/>">添加二级分类</a>
+    		  <a href="<c:url value='/admin/category/editParentPre.do?cid=${parent.cid }'/>">修改</a>
+    		  <a onclick="return confirm('您是否真要删除该一级分类？')" href="<c:url value="/admin/category/deleteParent.do?cid=${parent.cid }"/>">删除</a>
     		</td>
     	</tr>
     <c:forEach items="${parent.children }" var="child">
@@ -38,8 +38,8 @@
     		<td>${child.cname }</td>
     		<td class="secondCol">${child.desc }</td>
     		<td width="200px;" align="right">
-    		  <a href="<c:url value='/adminCategoryServlet?method=editChildPre&cid=${child.cid }'/>">修改</a>
-    		  <a onclick="return confirm('您是否真要删除该二级分类？')" href="<c:url value="/adminCategoryServlet?method=deleteChild&cid=${child.cid }"/>">删除</a>
+    		  <a href="<c:url value='/admin/category/editChildPre.do?cid=${child.cid }'/>">修改</a>
+    		  <a onclick="return confirm('您是否真要删除该二级分类？')" href="<c:url value="/admin/category/deleteChild.do?cid=${child.cid }"/>">删除</a>
     		</td>
     	</tr>
     </c:forEach>

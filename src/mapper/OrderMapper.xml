@@ -110,7 +110,7 @@
   	<include refid="order_limit_sql"/>
   </select>
   
-  <select id="findAll" parameterType="string" resultMap="OrderResultMap">
+  <select id="findAll" parameterType="map" resultMap="OrderResultMap">
   	<include  refid="select_*_sql"/>
   	<include refid="order_limit_sql"/>
   </select>

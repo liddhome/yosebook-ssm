@@ -44,8 +44,8 @@ function loadChildren() {
 	$.ajax({
 		async:true,
 		cache:false,
-		url:"/yosebook-ssm/adminBookServlet",
-		data:{method:"ajaxFindChildren", pid:pid},
+		url:"/yosebook-ssm/admin/book/ajaxFindChildren.do",
+		data:{pid:pid},
 		type:"POST",
 		dataType:"json",
 		success:function(arr) {
@@ -62,11 +62,11 @@ function loadChildren() {
 }
 
 function editForm(){
-	$("#method").val("edit");
+	$("#form").attr("action", "/yosebook-ssm/admin/book/edit.do");
 	$("#form").submit();
 }
 function delForm(){
-	$("#method").val("delete");
+	$("#form").attr("action", "/yosebook-ssm/admin/book/delete.do");
 	$("#form").submit();
 }
 </script>
@@ -116,8 +116,7 @@ function delForm(){
   
   <div id='formDiv'>
    <div class="sm">&nbsp;</div>
-   <form action="/yosebook-ssm/adminBookServlet" method="post" id="form">
-   	<input type="hidden" id="method"  name="method"/>
+   <form action="" method="post" id="form">
    	<input type="hidden" name="bid" value="${book.bid }"/>
     <img align="top" src="<c:url value='/${book.image_w }'/>" class="tp"/>
     <div style="float:left;">

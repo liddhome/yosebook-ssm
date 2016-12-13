@@ -23,11 +23,11 @@
 
 <body>
     <p class="pLink">
-        <a href="<c:url value='/adminOrderServlet?method=findByStatus&status=1'/>">未付款</a>
-        | <a href="<c:url value='/adminOrderServlet?method=findByStatus&status=2'/>">已付款</a>
-        | <a href="<c:url value='/adminOrderServlet?method=findByStatus&status=3'/>">已发货</a>
-        | <a href="<c:url value='/adminOrderServlet?method=findByStatus&status=4'/>">交易成功</a>
-        | <a href="<c:url value='/adminOrderServlet?method=findByStatus&status=5'/>">已取消</a>
+        <a href="<c:url value='/admin/order/findByStatus.do?status=1'/>">未付款</a>
+        | <a href="<c:url value='/admin/order/findByStatus.do?status=2'/>">已付款</a>
+        | <a href="<c:url value='/admin/order/findByStatus.do?status=3'/>">已发货</a>
+        | <a href="<c:url value='/admin/order/findByStatus.do?status=4'/>">交易成功</a>
+        | <a href="<c:url value='/admin/order/findByStatus.do?status=5'/>">已取消</a>
     </p>
     <div class="divMain">
         <div class="title">
@@ -44,7 +44,7 @@
 <c:forEach items="${pb.beanList }" var="order">
             <tr class="tt">
                 <td width="320px" class="brlf">订单号：<a
-                    href="<c:url value='/adminOrderServlet?method=load&oid=${order.oid }'/>">${order.oid }</a></td>
+                    href="<c:url value='/admin/order/load.do?oid=${order.oid }'/>">${order.oid }</a></td>
                 <td width="200px">下单时间：${order.ordertime }</td>
                 <td width="178px">&nbsp;</td>
                 <td width="205px">&nbsp;</td>
@@ -69,12 +69,12 @@
             </c:choose>
                 </td>
                 <td>
-                <a href="<c:url value='/adminOrderServlet?method=load&oid=${order.oid }'/>">查看</a><br />
+                <a href="<c:url value='/admin/order/load.do?oid=${order.oid }'/>">查看</a><br />
             <c:if test="${order.status eq 1 }">
-                <a href="<c:url value='/adminOrderServlet?method=load&oid=${order.oid }&btn=cancel'/>">取消</a><br />
+                <a href="<c:url value='/admin/order/load.do?oid=${order.oid }&btn=cancel'/>">取消</a><br />
             </c:if>
             <c:if test="${order.status eq 2 }">
-                <a href="<c:url value='/adminOrderServlet?method=load&oid=${order.oid }&btn=deliver'/>">发货</a>
+                <a href="<c:url value='/admin/order/load.do?oid=${order.oid }&btn=deliver'/>">发货</a>
             </c:if>
                 </td>
             </tr>

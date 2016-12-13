@@ -73,10 +73,10 @@
 			<span class="spanTotal">合　　计：</span>
 			<span class="price_t">&yen;${order.total }</span><br/>
 <c:if test="${order.status eq 2 and btn eq 'deliver'}">
-	<a id="deliver" href="/yosebook-ssm/adminOrderServlet?method=deliver&oid=${order.oid }">发　　货</a>
+	<a id="deliver" href="/yosebook-ssm/admin/order/deliver.do?oid=${order.oid }">发　　货</a>
 </c:if>
 <c:if test="${order.status eq 1 and btn eq 'cancel'}">
-	<a id="cancel" href="/yosebook-ssm/adminOrderServlet?method=cancel&oid=${order.oid }">取　　消</a>
+	<a id="cancel" href="/yosebook-ssm/admin/order/cancel.do?oid=${order.oid }">取　　消</a>
 </c:if>
 		</div>
 	</div>

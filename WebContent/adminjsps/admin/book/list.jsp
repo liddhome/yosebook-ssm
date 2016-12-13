@@ -27,7 +27,7 @@
             <li>
                 <div class="inner">
                     <a class="pic"
-                        href="<c:url value='/adminBookServlet?method=load&bid=${book.bid }'/>"><img
+                        href="<c:url value='/admin/book/load.do?bid=${book.bid }'/>"><img
                         src="<c:url value='/${book.image_b }'/>"
                         border="0" /></a>
                     <p class="price">
@@ -36,18 +36,16 @@
                             class="price_s">${book.discount }折</span>)
                     </p>
                     <%-- url标签会自动对参数进行url编码 --%>
-                    <c:url value="/adminBookServlet" var="authorUrl">
-                        <c:param name="method" value="findByAuthor"></c:param>
+                    <c:url value="/admin/book/findByAuthor.do" var="authorUrl">
                         <c:param name="author" value="${book.author }"></c:param>
                     </c:url>
-                    <c:url value="/adminBookServlet" var="pressUrl">
-                        <c:param name="method" value="findByPress"></c:param>
+                    <c:url value="/admin/book/findByPress.do" var="pressUrl">
                         <c:param name="press" value="${book.press }"></c:param>
                     </c:url>
                     <p>
                         <a id="bookname"
                             title="${book.bname }"
-                            href="<c:url value='/adminBookServlet?method=load&bid=${book.bid }'/>">${book.bname }</a>
+                            href="<c:url value='/admin/book/load.do?bid=${book.bid }'/>">${book.bname }</a>
                     </p>
                     <p>
                         <a

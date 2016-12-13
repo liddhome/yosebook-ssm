@@ -44,9 +44,8 @@ input[type="submit"]:hover, input[type="reset"]:hover {
 </head>
 
 <body>
-    <form action="<c:url value='/adminBookServlet'/>"
+    <form action="<c:url value='/admin/book/findByConbination.do'/>"
         method="get">
-        <input type="hidden" name="method" value="findByConbination" />
         <table align="center">
             <tr>
                 <td>书名：</td>

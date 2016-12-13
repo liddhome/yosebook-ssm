@@ -34,7 +34,7 @@
 <body>
     <h1 align="center">图书管理</h1>
     <p align="center">
-        <a href="<c:url value='/adminBookServlet?method=addPre'/>">添加图书</a>
+        <a href="<c:url value='/admin/book/addPre.do'/>">添加图书</a>
         <a href="<c:url value='/adminjsps/admin/book/gj.jsp'/>">高级搜索</a>
     </p>
     <img src="/yosebook-ssm/images/ybig_logo.png">

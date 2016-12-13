@@ -97,7 +97,7 @@ public class OrderServiceImpl implements OrderService{
 			Map<String,Object> map = new HashMap<String,Object>();
 			map.put("ps", ps);
 			map.put("start", getStart(pc));
-			List<Order> orderList = orderDao.findAll(pc);
+			List<Order> orderList = orderDao.findAll(map);
 			PageBean<Order> pb = toPageBean(orderList,pc,map);
 			return pb;
 		} catch (SQLException e) {

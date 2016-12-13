@@ -16,7 +16,7 @@
     <table class="table" align="center" width="100%" height="100%" border="0">
     	<tr style="height: 120px; ">
     		<td align="center" width="190px;">
-    			<iframe frameborder="0" src="<c:url value='/adminBookServlet?method=findCategoryAll'/>" name="left"></iframe>
+    			<iframe frameborder="0" src="<c:url value='/admin/book/findCategoryAll.do'/>" name="left"></iframe>
     		</td>
     		<td>
     			<iframe frameborder="0" src="<c:url value='/adminjsps/admin/book/body.jsp'/>" name="body"></iframe>

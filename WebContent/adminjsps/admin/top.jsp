@@ -48,12 +48,12 @@ a:hover {
     <p>Yosebook后台管理</p>
     <div style="line-height: 10px;">
         <span style="margin-left: 10px; color: #fff;">管理员：${sessionAdmin.adminname }</span> <a
-            target="_top" href="<c:url value='/adminServlet?method=quit'/>">退出</a>
+            target="_top" href="<c:url value='/admin/admin/quit.do'/>">退出</a>
         <span style="padding-left: 50px;"> <a
-            href="<c:url value='/adminCategoryServlet?method=findAll'/>">分类管理</a>
+            href="<c:url value='/admin/category/findAll.do'/>">分类管理</a>
             <a class="bodr_lf"
             href="<c:url value='/adminjsps/admin/book/main.jsp'/>">图书管理</a>
-            <a href="<c:url value='/adminOrderServlet?method=findAll'/>">订单管理</a>
+            <a href="<c:url value='/admin/order/findAll.do'/>">订单管理</a>
         </span>
     </div>
 </body>

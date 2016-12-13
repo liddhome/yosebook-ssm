@@ -20,7 +20,7 @@ public interface OrderDao {
 	
 	public List<Order> findByUser(Map<String,Object> map) throws SQLException;
 	
-	public List<Order> findAll(int pc) throws SQLException;
+	public List<Order> findAll(Map<String,Object> map) throws SQLException;
 	
 	public Integer findOrderTr(Map<String, Object> map) throws SQLException;
 }

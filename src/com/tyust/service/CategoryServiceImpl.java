@@ -85,8 +85,12 @@ public class CategoryServiceImpl implements CategoryService{
 	private Map<String,Object> toMap(Category category){
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("cid", category.getCid());
+		if(category.getCname()!=null)
 		map.put("cname", category.getCname());
+		if(category.getParent()!=null)
+			if(category.getParent().getCid()!=null)
 		map.put("pid", category.getParent().getCid());
+		if(category.getDesc()!=null)
 		map.put("desc", category.getDesc());
 		return map;
 	}

@@ -116,15 +116,13 @@ footer p {
 </head>
 
 <body>
-    <header> <img src="/yosebook-ssm/images/ybig_logo.png">
+    <header> <img src="<c:url value='/images/ybig_logo.png'/> ">
     <p>管理员登录</p>
     </header>
     <section>
      <p class="error" style="font-size:14px; color: red">${msg }</p>
-    <form action="<c:url value='/adminServlet'/>"
+    <form action="<c:url value='/admin/admin/login.do'/>"
         method="post" target="_top">
-        <input type="hidden" name="method" value="login" /> 
-        <%-- <p class="error" id="error">${msg }</p> --%>
         <input type="text" name="adminname" value="${admin.adminname }${adminname}" id="adminname"
             placeholder="管理员账户" /><br /> 
         <input type="password" name="adminpwd" id="adminpwd" placeholder="密码" /><br /> 
@@ -133,7 +131,7 @@ footer p {
     </section>
     <footer>
         <p>Copyright &copy; 优思网 2013-2016, All Rights Reserved&nbsp;&nbsp;|&nbsp;&nbsp;京ICP证041189号音像制品经营许可证 京音网8号</p>
-        <p><img src="<c:url value='/images/beian.png'/>">&nbsp;&nbsp;<img src="<c:url value='/images/kexin.png'/>"></p>
+        <p><img src="<c:url value='/images/beian.png'/> ">&nbsp;&nbsp;<img src="<c:url value='/images/kexin.png'/> "></p>
     </footer>
 </body>
 </html>

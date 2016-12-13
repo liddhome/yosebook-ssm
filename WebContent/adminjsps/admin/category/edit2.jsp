@@ -34,10 +34,9 @@
     <h3>修改2级分类</h3>
     <h1></h1>
     <p style="font-weight: 900; color: red">${msg }</p>
-    <form action="<c:url value='/adminCategoryServlet'/>"
+    <form action="<c:url value='/admin/category/editChild.do'/>"
         method="post" onsubmit="return checkForm()">
-        <input type="hidden" name="method" value="editChild" /> <input
-            type="hidden" name="cid" value="${child.cid }" /> 分类名称：<input type="text"
+        <input type="hidden" name="cid" value="${child.cid }" /> 分类名称：<input type="text"
             name="cname" value="${child.cname }" id="cname" /><br />
         一级分类：<select name="pid" id="pid">
             <option value="">===选择1级分类===</option>
