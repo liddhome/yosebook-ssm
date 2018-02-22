@@ -26,7 +26,7 @@ $(function() {
 	<span class="spanPrice">支付金额：</span><span class="price_t">&yen;${order.total }</span>
 	<span class="spanOid">编号：${order.oid }</span>
 </div>
-<form action="<c:url value='/Order/payment.do'/>" method="post" id="form1" target="_top">
+<form action="<c:url value='/order/payment.do'/>" method="post" id="form1" target="_top">
 <input type="hidden" name="oid" value="${order.oid }"/>
 <input type="hidden" name="total" value="${order.total }"/>
 <div class="divBank">
@@ -112,7 +112,7 @@ $(function() {
 	  </div>
 	</div>
 	<div style="margin: 40px;">
-		<a href="javascript:alert('支付成功！');" class="linkNext">下一步</a>
+		<a href="javascript:void $('#form1').submit();" class="linkNext">下一步</a>
 	</div>
 </div>
 </form>
